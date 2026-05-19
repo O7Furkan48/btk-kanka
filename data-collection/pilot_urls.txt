@@ -1,0 +1,4 @@
+# Bu dosya scraper'a verilecek ürün URL listesidir.
+# Format: her satır bir ürün sayfası URL'si (yorum satırları # ile başlar).
+# Örnek:
+# https://www.example-marketplace.com/urun/abc-123
