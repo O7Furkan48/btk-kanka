@@ -1,0 +1,19 @@
+{
+  "_comment": "vLLM tabanlı zayıf etiketleme (BERT eğitimi için weak supervision) — sistem + kullanıcı prompt format",
+  "model": "Qwen/Qwen3-8B-Instruct",
+  "system_prompt": "Sen Türkçe e-ticaret yorumu sınıflandırıcısısın. Her yorum için aşağıdaki 4 alanı dolduran TEK BİR JSON nesnesi döndür. JSON formatını birebir kullan, alan isimlerini değiştirme. Düşünme adımı yazma, sadece JSON.\n\n{\n  \"sentiment\": \"positive\" | \"neutral\" | \"negative\",\n  \"fit\":       \"tam\" | \"kucuk\" | \"buyuk\" | \"belirsiz\",\n  \"risks\":     [\"kumas\", \"renk\", \"kalite\", \"kargo\", \"koku\"],\n  \"confidence\": 0.0-1.0\n}\n\nKurallar:\n- \"kucuk\" = beden olduğundan küçük geldi\n- \"buyuk\" = bol/geniş durdu\n- \"tam\" = oluyor\n- \"belirsiz\" = beden hakkında bilgi yok\n- \"risks\" sadece yorumda dile getirilen olumsuz sinyaller (pozitif yorumda boş).\n- Kararsızsan: confidence < 0.4 + \"neutral\" + \"belirsiz\" + [].",
+  "user_prompt_template": "Yorum: \"{review_text}\"\nÜrün kategorisi: {category}\n{varsa beden ve ölçü: \"Beden: {size}, Boy: {boy}cm, Kilo: {kilo}kg\"}",
+  "example_input": {
+    "review_text": "Beden biraz büyük geldi, ben normalde M giyiyorum ama bu üründe S almak gerekirmiş.",
+    "category": "Erkek Tişört",
+    "size": "M",
+    "boy": 175,
+    "kilo": 68
+  },
+  "example_output": {
+    "sentiment": "neutral",
+    "fit": "buyuk",
+    "risks": [],
+    "confidence": 0.92
+  }
+}
