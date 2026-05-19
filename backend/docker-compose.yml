@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: kanka
+      POSTGRES_USER: kanka
+      POSTGRES_PASSWORD: kanka_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kanka -d kanka"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ChromaDB HTTP server — embedded SQLite verisi üzerinde HTTP API açar.
+  # Mevcut backend/app/data/chroma klasörünü mount eder; backend artık bu portu
+  # kullanır (CHROMA_HTTP_URL env'i set ise) → admin UI ile aynı veriyi paylaşır.
+  # Versiyon 1.5.9 — backend client'ı (chromadb 1.5.9) ile birebir eşleşir.
+  chroma:
+    image: chromadb/chroma:1.5.9
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./app/data/chroma:/data
+    environment:
+      IS_PERSISTENT: "TRUE"
+      PERSIST_DIRECTORY: /data
+      ANONYMIZED_TELEMETRY: "FALSE"
+      ALLOW_RESET: "FALSE"   # demo'da yanlışlıkla koleksiyon silinmesin
+
+  # ChromaDB browser/admin UI — koleksiyonları listele, doküman/metadata göster,
+  # semantik sorgu yap. http://localhost:3500 → "Connection" alanına URL olarak
+  # http://localhost:8001 gir (host'tan; container ağından DEĞİL).
+  chroma-admin:
+    image: fengzhichao/chromadb-admin:latest
+    restart: unless-stopped
+    ports:
+      # Image içeride Next.js'i 3001'de açıyor — host 3500'e map et.
+      - "3500:3001"
+    depends_on:
+      - chroma
+
+volumes:
+  postgres_data:
