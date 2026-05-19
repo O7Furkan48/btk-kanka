@@ -1,0 +1,53 @@
+{
+  "products_collection": {
+    "dimension": 1024,
+    "encoder": "BAAI/bge-m3",
+    "example_doc": {
+      "id": "ornek-erkek-oversize-bisiklet-yaka-pamuklu-tisort",
+      "document": "Örnek Marka Erkek Oversize Bisiklet Yaka %100 Pamuk Kısa Kollu Tişört. Kategori: Erkek Tişört. Kalıp: oversize. Kumaş: %100 pamuk. Ortam: günlük. Renk: siyah.",
+      "metadata": {
+        "slug": "ornek-erkek-oversize-bisiklet-yaka-pamuklu-tisort",
+        "marka": "Örnek Marka",
+        "kategori_son": "Erkek Tişört",
+        "kategori_key": "shirt",
+        "cinsiyet": "erkek",
+        "fiyat": 349.9,
+        "rating": 4.4,
+        "risk_level": "low",
+        "imageUrl": null,
+        "bg": "ph-bg-1"
+      }
+    }
+  },
+  "reviews_collection": {
+    "dimension": 1024,
+    "encoder": "BAAI/bge-m3",
+    "example_doc": {
+      "id": "rv-0001",
+      "document": "Kumaşı çok yumuşak, ten dostu. Yıkadıktan sonra çekmedi, rengini de korudu. Oversize kalıbı tam istediğim gibi düştü.",
+      "metadata": {
+        "urun_slug": "ornek-erkek-oversize-bisiklet-yaka-pamuklu-tisort",
+        "beden": "L",
+        "boy_bin": 180,
+        "kilo_bin": 80,
+        "sent_label": "positive",
+        "fit_label": "tam",
+        "risk_top": "",
+        "has_size_signal": true
+      }
+    }
+  },
+  "qa_collection": {
+    "dimension": 1024,
+    "encoder": "BAAI/bge-m3",
+    "example_doc": {
+      "id": "qa-0001",
+      "document": "Kumaş kalınlığı nasıl, kışın da giyilir mi? — Orta gramajlı bir kumaş; tek başına yazın, alta giyilerek geçiş mevsiminde rahatlıkla giyilir.",
+      "metadata": {
+        "urun_slug": "ornek-erkek-oversize-bisiklet-yaka-pamuklu-tisort",
+        "satici": "Örnek Mağaza",
+        "soru_tarihi": "2025-08-10"
+      }
+    }
+  }
+}
