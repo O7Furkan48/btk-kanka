@@ -1,0 +1,75 @@
+{
+  "slug": "ornek-erkek-oversize-bisiklet-yaka-pamuklu-tisort",
+  "brand": "Örnek Marka",
+  "title": "Erkek Oversize Bisiklet Yaka %100 Pamuk Kısa Kollu Tişört",
+  "category": [
+    {"label": "Erkek", "href": "/kategori/erkek"},
+    {"label": "Erkek Giyim", "href": "/kategori/erkek-giyim"},
+    {"label": "Erkek Tişört", "href": "/kategori/erkek-tisort"}
+  ],
+  "categoryKey": "shirt",
+  "rating": 4.4,
+  "reviewCount": 5,
+  "salesCount": "1.2k oy",
+  "price": 349.9,
+  "oldPrice": 469.0,
+  "discountPercent": 25,
+  "risk": {
+    "level": "low",
+    "percent": 9,
+    "levelLabel": "Düşük",
+    "reviewCount": 5,
+    "satisfaction": 86,
+    "bars": [
+      {"label": "Kumaş kalitesi",   "value": 12, "level": "low"},
+      {"label": "Beden uyumu",      "value": 18, "level": "low"},
+      {"label": "Kargo / paketleme","value":  6, "level": "low"}
+    ]
+  },
+  "colors": [
+    {"name": "Siyah",   "hex": "#0F172A", "border": "#0F172A"},
+    {"name": "Beyaz",   "hex": "#FAFAFA", "border": "#E2E8F0"},
+    {"name": "Lacivert","hex": "#1E2E55", "border": "#1E2E55"}
+  ],
+  "defaultColorIndex": 0,
+  "sizes": [
+    {"label": "S",  "risk": "low",  "available": true},
+    {"label": "M",  "risk": "low",  "available": true},
+    {"label": "L",  "risk": "low",  "available": true},
+    {"label": "XL", "risk": "mid",  "available": true},
+    {"label": "2XL","risk": "low",  "available": false}
+  ],
+  "defaultSizeIndex": 1,
+  "gallery": [
+    {"bg": "ph-bg-1", "label": "Ön",    "imageUrl": null},
+    {"bg": "ph-bg-1", "label": "Arka",  "imageUrl": null},
+    {"bg": "ph-bg-1", "label": "Detay", "imageUrl": null}
+  ],
+  "summary": "Oversize kalıplı %100 pamuk bir tişört; günlük ve üniversite kullanımı için tasarlanmış. 5 kullanıcı yorumunda ortalama 4,4/5 puan ile %86 memnuniyet sağlamış.",
+  "audience": ["Oversize sevenler", "Üniversite öğrencileri"],
+  "occasions": ["Günlük", "Casual"],
+  "description": [
+    "Tek katlı %100 pamuklu örgü kumaştan üretilmiş, oversize kalıplı kısa kollu erkek tişört. Bisiklet yaka, ribana detaylı.",
+    "Kumaş gramajı orta-yüksek; tek yıkamada renk vermez. Beden kalıbı standartın 1 numara büyük; arada bedendeyseniz bir küçüğünü tercih edebilirsiniz."
+  ],
+  "care": [
+    {"icon": "wash",  "text": "30°C'de hassas yıkama"},
+    {"icon": "iron",  "text": "Düşük ısıda ütü"},
+    {"icon": "shield","text": "Kuru çamaşır makinesinde kurutmayın"},
+    {"icon": "truck", "text": "Ücretsiz kargo · 15 gün iade"}
+  ],
+  "specs": [
+    ["Yaka Tipi",        "Bisiklet Yaka"],
+    ["Materyal",         "%100 Pamuk"],
+    ["Kumaş Tipi",       "Örgü"],
+    ["Kalıp",            "Oversize"],
+    ["Renk",             "Siyah"],
+    ["Kol Tipi",         "Standart Kol"],
+    ["Boy",              "Standart"],
+    ["Desen",            "Düz"],
+    ["Ortam",            "Casual / Günlük"],
+    ["Yıkama Talimatı",  "30°C hassas"]
+  ],
+  "reviewCounts": {"all": 5, "positive": 4, "negative": 0, "matchedToMe": 0},
+  "qaMeta": {"total": 2, "avgResponse": "ortalama 6 saatte yanıtlanıyor"}
+}
